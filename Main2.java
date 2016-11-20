@@ -11,8 +11,15 @@ public class Main2 {
 		System.out.println("Прошу ввести ширину прямокутника");
 		int length = sc.nextInt();
 		
+		//Об'єкт, створений конструктором з параметрами
 		Rectangle s = new Rectangle(width,length);
 		s.info();
+		
+		//Об'єкт, створений конструктором без параметрів
+		Rectangle s1 = new Rectangle();
+		s1.width = width;
+		s1.length = length;
+		
 		sc.close();
 	}
 	
