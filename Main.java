@@ -1,16 +1,12 @@
-package core.java2;
+package core.java5;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Robot robot = new Robot();
-		robot.work();
-		Robot robot2 = new RobotDancer();
-		robot2.work();
-		Robot robot3 = new RobotCoffee();
-		robot3.work();
-		Robot robot4 = new RobotCooker();
-		robot4.work();
+		Car car = new Car(new Steering("ТАЗ-2106",1.6), new Wheels(36.6), new Body("Седан"));
+		System.out.println(car);
+		car.bw();
+		System.out.println(car);
 	}
 
 }
