@@ -1,4 +1,4 @@
-package core.java8;
+package core.java7;
 
 public class Wheels {
 	
@@ -15,11 +15,11 @@ public class Wheels {
 	public Wheels(){}
 
 
-	public void bw(){
-		w+=0.5;
+	public double bw(){
+		return w*2;
 	}
 
-	public double getWeels() {
+	public double getW() {
 		return w;
 	}
 
