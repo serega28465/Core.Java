@@ -1,6 +1,4 @@
-package core.java8;
-
-
+package core.java7;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,17 +12,17 @@ public class Main {
 		
 		List <Car> cars = new ArrayList<Car>();
 		cars.add(new Car(new Steering(" Daewoo Lanos ", 1.6, " має кнопочки :)" ),
-				new Wheels(36.6), new Body("Sedan", "Червоний")));
+				new Wheels(36.0), new Body("Sedan", "Червоний")));
 		cars.add(new Car(new Steering(" Ford Fiesta ", 1.6, " не має кнопочок :(" ),
 				new Wheels(35.0), new Body("Hachback", "Синій")));
 		cars.add(new Car(new Steering(" Mersedes ", 2.0, " має кнопочки :)" ),
-				new Wheels(37.4), new Body("Sedan", "Білий")));
+				new Wheels(37.0), new Body("Sedan", "Білий")));
 		cars.add(new Car(new Steering(" BMW X5 ", 3.4, " має кнопочки :)" ),
-				new Wheels(39.9), new Body("Hachback", "Чорний")));
+				new Wheels(39.0), new Body("Hachback", "Black")));
 		cars.add(new Car(new Steering(" Wolkswagen ", 1.8, " не має кнопочок :(" ),
 				new Wheels(33.0), new Body("Sedan", "Зелений")));
 		cars.add( new Car(new Steering(" Chery ", 1.4, " не має кнопочок :(" ),
-				new Wheels(34.5), new Body("Sedan", "Жовтий")));
+				new Wheels(34.0), new Body("Sedan", "Жовтий")));
 		
 		while(true){
 			System.out.println("Натисніть 1, щоб Знайти машини, які мають введений діаметр коліс.");
@@ -38,16 +36,32 @@ public class Main {
 			
 			case"1":{
 				System.out.println("Введіть діаметр коліс");
-				double diam = sc.nextDouble();
-				
+				double diam =(double) sc.nextInt();
+					
+				for (Car car : cars) {
+					
+					if(car.getWheels().getW() == diam){
+						System.out.println(car);
+						}
+					}
+					break;
 				
 			/*	for (Car car : cars) {
 					System.out.println(car);
 				}
 			*/	
-				break;
 			}
 			case"2":{
+				System.out.println("Введіть діаметр коліс");
+				double diam =(double) sc.nextInt();
+				System.out.println("Enter body color");
+				String c = sc.next();
+				for (Car car : cars) {
+							
+				if(car.getBody().getColor().equalsIgnoreCase(c)){
+					System.out.println(car);
+					}
+				}
 				break;
 			}
 			case"3":{
@@ -65,7 +79,7 @@ public class Main {
 			}
 			}
 		}
-
+		
 		//car.bw();
 		//System.out.println(car);
 	}
