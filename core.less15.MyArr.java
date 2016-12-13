@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Iterator;
 
-public class MyArrayList<T extends Serializable & Cloneable> implements Iterable<T>, Serializable{
+public class MyArrayList<T extends Serializable> implements Iterable<T>, Serializable{
 
 	private static final long serialVersionUID = 3292773393176566033L;
 	private Object[] array = new Object[4];
