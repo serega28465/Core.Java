@@ -46,7 +46,8 @@ public class Main {
 		setName.invoke(car2, name1);
 		
 		System.out.println(car2);
-		
+		System.out.println(carClass.getTypeName());
+		System.out.println(carClass.getMethods());
 		
 	}
 
