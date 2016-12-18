@@ -1,0 +1,43 @@
+package core.thread;
+
+import java.util.Scanner;
+
+public class MyThread extends Thread{
+
+	public MyThread() {
+		this.setDaemon(true);
+		this.start();
+	}
+	
+	@Override
+	public void run() {
+		while (true) {
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			
+		}
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Яку кількість чисел Фібоначі ви хотіли б вивести на екран?(Thread-0)");
+		int c1 = sc.nextInt();
+		int[] arr = new int[c1];
+		for (int i = 0; i < c1; i++) {
+			
+			if(i>1){
+			arr[i]=arr[i-1]+arr[i-2];
+			}
+			if(i<=1){
+				arr[i] = 1;
+			}
+		}
+		for (int i = 0; i < c1; i++) {
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+		sc.close();
+		}
+	}
+
+	
+	
+}
