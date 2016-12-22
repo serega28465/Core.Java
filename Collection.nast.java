@@ -200,7 +200,71 @@ public class Collection {
 	// Прогнати від останнього до першого елементу масиву.
 	// Перевірити кожен третій елемент масиву від останнього чи він непарний,
 	// якщо так то вивести дані елементи на консоль.
+	public void anonymous(){
+		class Anonym implements Iterator{
+			Object[] array = new Object[12];
+			int index = array.length - 1;
 
+			public int getIndex() {
+				return index;
+			}
+
+			public void setIndex(int index) {
+				this.index = index;
+			}
+
+			@Override
+			public int hashCode() {
+				final int prime = 31;
+				int result = 1;
+				result = prime * result + getOuterType().hashCode();
+				result = prime * result + index;
+				return result;
+			}
+
+			@Override
+			public boolean equals(Object obj) {
+				if (this == obj)
+					return true;
+				if (obj == null)
+					return false;
+				if (getClass() != obj.getClass())
+					return false;
+				ToFirst other = (ToFirst) obj;
+				if (!getOuterType().equals(other.getOuterType()))
+					return false;
+				if (index != other.index)
+					return false;
+				return true;
+			}
+
+			@Override
+			public String toString() {
+				return "ToFirst [index=" + index + "]";
+			}
+
+			@Override
+			public boolean hasNext() {
+				return index >= 0;
+			}
+
+			@Override
+			public int next() {
+				if (index % 3 == 0&&(int)array[index]%2==0){
+					System.out.print(array[index]+" ");
+				
+				return (int) array[index--];
+				}
+				return 0;
+			}
+			
+			private Collection getOuterType() {
+				return Collection.this;
+			}
+
+			
+		}
+	}
 
 
 	// }
