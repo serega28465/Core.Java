@@ -42,5 +42,7 @@ public class Main {
 		System.out.println(nas);
 		
 		//Anonimous class
+		collection.anonymous();
+		System.out.println(collection);
 	}
 }
